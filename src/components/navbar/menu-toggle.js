@@ -6,7 +6,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
   return (
     <Box display={{ base: "block", md: "none"}} onClick={toggle} >
       {
-        isOpen ? <CloseIcon /> : <HamburgerIcon />
+        isOpen ? <CloseIcon /> : <HamburgerIcon w={6} h={6} />
       }
     </Box>
   )
