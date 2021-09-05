@@ -12,17 +12,17 @@ const MenuLinks = ({ isOpen }) => {
         spacing={8}
         align="center"
         justify={["center", "space-between", "flex-end", "flex-end"]}
-        direction={["column", "row", "row", "row"]}
+        direction={["column", "column", "row", "row"]}
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/">
           Home
         </MenuItem>
         <MenuItem to="/about">About</MenuItem>
-        <Button background="brand.100" size="md" variant="ghost">
+        <Button variant="primary" rounded={12}>
           <MenuItem to="/login">Log In</MenuItem>
         </Button>
-        <Button background="brand.400" size="md" variant="ghost">
+        <Button variant="secondary" rounded={12}>
           <MenuItem to="/signup">Sign Up</MenuItem>
         </Button>
       </Stack>

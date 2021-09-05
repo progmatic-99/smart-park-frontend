@@ -4,7 +4,7 @@ import React from 'react'
 
 const MenuToggle = ({ toggle, isOpen }) => {
   return (
-    <Button colorscheme="brand.400" size="sm" variant="ghost" display={{ base: "block", md: "none"}} onClick={toggle} >
+    <Button size="sm" rounded={8} variant="hamburger" display={{ base: "block", md: "none"}} onClick={toggle} >
       {
         isOpen ? <CloseIcon /> : <HamburgerIcon w={6} h={6} />
       }

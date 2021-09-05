@@ -8,8 +8,8 @@ const Login = () => {
         <Heading color="white" textAlign="center" mb={6}>Smart Park</Heading> 
         <Input placeholder="your-phone-number" variant="filled" mb={6} type="number" />
         <Input placeholder="******" variant="filled" mb={6} type="password" />
-        <Button backgroundColor="brand.100" mb={6}>Log In</Button>
-        <Button backgroundColor="brand.400">Sign Up</Button>
+        <Button variant="primary" mb={6}>Log In</Button>
+        <Button variant="secondary">Sign Up</Button>
       </Flex>
     </Flex>
   )

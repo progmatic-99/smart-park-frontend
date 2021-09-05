@@ -7,7 +7,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import theme from './theme'
+import theme from './styles/theme'
 import Navbar from './components/navbar/navbar'
 import Home from './components/templates/home'
 import Login from './components/templates/login'
