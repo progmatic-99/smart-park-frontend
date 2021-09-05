@@ -1,17 +1,20 @@
 import React from 'react'
 import {
   ChakraProvider,
-  theme,
 } from '@chakra-ui/react'
 import {
   BrowserRouter as Router,
   Route,
   Switch
 } from 'react-router-dom'
+import theme from './theme'
 import Navbar from './components/navbar/navbar'
 import Home from './components/templates/home'
 import Login from './components/templates/login'
+import Signup from './components/templates/signup'
 import About from './components/templates/about'
+import '@fontsource/source-code-pro/400.css'
+import '@fontsource/source-sans-pro/600.css'
 
 function App() {
   return (
@@ -22,6 +25,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
       </Switch>
       </Router>
     </ChakraProvider>

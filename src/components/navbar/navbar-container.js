@@ -6,12 +6,12 @@ const NavbarContainer = ({ children, ...props }) => {
     <Flex
       as="nav"
       align="center"
-      justify="space-between"
+      justify="center"
       wrap="wrap"
       w="100%"
       mb={8}
       p={8}
-      bg="#07070d"
+      bg="brand.200"
       color={["white", "white", "primary.700", "primary.700"]}
       {...props}
     >
