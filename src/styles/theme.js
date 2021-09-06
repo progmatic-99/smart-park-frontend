@@ -5,9 +5,8 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        // color: "#08070e",
-        // bg: "rgb(47,16,58)",
-        // bgGradient: "linear-gradient(16deg, rgba(47,16,58,1) 0%, rgba(51,38,29,1) 50%, rgba(12,11,13,1) 100%);" 
+        // bgcolor: black,
+        // bgImage: radial-gradient(circle at left, #dd00ff99, transparent 20%),radial-gradient(ellipse at 10% 20%, #d89a0099, transparent 60%)
       },
     }
   },

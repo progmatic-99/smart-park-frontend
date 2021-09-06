@@ -1,4 +1,4 @@
-import { Box, Button, Stack } from '@chakra-ui/react'
+import { Box, Button, Stack, Spacer } from '@chakra-ui/react'
 import React from 'react'
 import MenuItem from './menu-item'
 
@@ -19,6 +19,7 @@ const MenuLinks = ({ isOpen }) => {
           Home
         </MenuItem>
         <MenuItem to="/about">About</MenuItem>
+        <Spacer />
         <Button variant="primary" rounded={12}>
           <MenuItem to="/login">Log In</MenuItem>
         </Button>
