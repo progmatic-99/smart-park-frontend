@@ -4,7 +4,7 @@ import React from 'react'
 const Login = () => {
   return (
     <Flex height="100vh" alignItems="center" justifyContent="center">
-      <Flex direction="column" background="brand.200" p={12} rounded={12}>
+      <Flex direction="column" background="gray.700" p={12} rounded={12}>
         <Heading color="white" textAlign="center" mb={6}>Smart Park</Heading> 
         <Input placeholder="your-phone-number" variant="filled" mb={6} type="number" />
         <Input placeholder="******" variant="filled" mb={6} type="password" />

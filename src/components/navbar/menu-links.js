@@ -1,5 +1,6 @@
-import { Box, Button, Stack, Spacer } from '@chakra-ui/react'
+import { Box, Stack } from '@chakra-ui/react'
 import React from 'react'
+import ButtonLink from './button-link'
 import MenuItem from './menu-item'
 
 const MenuLinks = ({ isOpen }) => {
@@ -11,7 +12,7 @@ const MenuLinks = ({ isOpen }) => {
       <Stack
         spacing={8}
         align="center"
-        justify={["center", "space-between", "flex-end", "flex-end"]}
+        justify={["center", "space-around", "flex-end", "flex-end"]}
         direction={["column", "column", "row", "row"]}
         pt={[4, 4, 0, 0]}
       >
@@ -19,13 +20,12 @@ const MenuLinks = ({ isOpen }) => {
           Home
         </MenuItem>
         <MenuItem to="/about">About</MenuItem>
-        <Spacer />
-        <Button variant="primary" rounded={12}>
-          <MenuItem to="/login">Log In</MenuItem>
-        </Button>
-        <Button variant="secondary" rounded={12}>
-          <MenuItem to="/signup">Sign Up</MenuItem>
-        </Button>
+        <ButtonLink to="/login" variant="primary" rounded={24}>
+          Log In
+        </ButtonLink>
+        <ButtonLink to="/signup" variant="secondary" rounded={24}>
+          Sign Up
+        </ButtonLink>
       </Stack>
     </Box>
   )

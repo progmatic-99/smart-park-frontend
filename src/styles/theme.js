@@ -1,7 +1,10 @@
 import { extendTheme } from "@chakra-ui/react"
 import { ButtonStyles as Button } from "./components/buttonStyles"
+import { LinkStyles as Link } from "./components/linkStyles"
 
 const theme = extendTheme({
+  initialColorMode: "dark",
+  useSystemColorMode: false,
   styles: {
     global: {
       body: {
@@ -24,6 +27,7 @@ const theme = extendTheme({
   },
   components: {
     Button,
+    Link,
   }
 })
 

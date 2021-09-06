@@ -15,6 +15,7 @@ import Signup from './components/templates/signup'
 import About from './components/templates/about'
 import '@fontsource/source-code-pro/400.css'
 import '@fontsource/source-sans-pro/600.css'
+import Footer from './components/templates/footer'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
       </Switch>
+      <Footer />
       </Router>
     </ChakraProvider>
   );

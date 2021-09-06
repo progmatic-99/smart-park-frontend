@@ -2,7 +2,8 @@ import { whiten } from "@chakra-ui/theme-tools"
 
 export const ButtonStyles = {
   baseStyle: {
-    font: "body",
+    font: "heading",
+    fontWeight: "bold",
   },
   sizes: {},
   variants: {
