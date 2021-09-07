@@ -6,7 +6,7 @@ import { Box } from '@chakra-ui/layout'
 const Logo = (props) => {
   return (
     <Box {...props}>
-      <Image src={AppLogo} alt="Smart Park Logo" w="40px" h="40px" />  
+      <Image src={AppLogo} alt="Smart Park Logo" w="30px" h="30px" />  
     </Box>
   )
 }

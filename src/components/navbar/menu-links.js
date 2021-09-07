@@ -11,14 +11,12 @@ const MenuLinks = ({ isOpen }) => {
     >  
       <Stack
         spacing={8}
-        align="center"
+        align={["flex-start", "center", "center", "center"]}
         justify={["center", "space-around", "flex-end", "flex-end"]}
         direction={["column", "column", "row", "row"]}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem to="/">
-          Home
-        </MenuItem>
+        <MenuItem to="/">Home</MenuItem>
         <MenuItem to="/about">About</MenuItem>
         <ButtonLink to="/login" variant="primary" rounded={24}>
           Log In

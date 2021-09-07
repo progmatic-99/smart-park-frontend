@@ -1,9 +1,11 @@
 export const LinkStyles = {
   baseStyle: {
     font: "heading",
-    fontSize: "lg",
+    fontSize: "md",
     fontWeight: "bold",
+    color: "white",
     _hover: {
+      color: "brand.100",
       textDecoration: "none",
     }
   }

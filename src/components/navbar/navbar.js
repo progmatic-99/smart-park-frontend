@@ -1,3 +1,4 @@
+import { Spacer } from '@chakra-ui/react'
 import React from 'react'
 import Logo from './logo'
 import MenuLinks from './menu-links'
@@ -11,7 +12,8 @@ const Navbar = (props) => {
 
   return (
     <NavbarContainer {...props}>
-      <Logo w="100px" />
+      <Logo />
+      <Spacer />
       {/* <ColorModeSwitcher /> */}
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />

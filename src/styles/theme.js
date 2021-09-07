@@ -8,8 +8,9 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        // bgcolor: black,
+        bgColor: "black",
         // bgImage: radial-gradient(circle at left, #dd00ff99, transparent 20%),radial-gradient(ellipse at 10% 20%, #d89a0099, transparent 60%)
+        bgGradient: "radial(circle to-l, #dd00ff99, transparent 20%),radial(ellipse to-r to-tr, #d89a0099, transparent 60%)",
       },
     }
   },

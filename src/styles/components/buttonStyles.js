@@ -12,7 +12,7 @@ export const ButtonStyles = {
       color: "black",
       _hover: {
         boxShadow: "md",
-        bg: whiten("brand.100", 40),
+        bg: whiten("brand.100", 50),
       }
     }),
     secondary: (props) => ({
@@ -25,8 +25,15 @@ export const ButtonStyles = {
       }
     }),
     hamburger: (props) => ({
+      color: "white",
       border: "1px solid",
       borderColor: "white",
+    }),
+    iconButton: (props) => ({
+      color: "brand.400",
+      _hover: {
+        bg: "brand.300"
+      }
     }),
   }
 }

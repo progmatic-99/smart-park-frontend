@@ -3,11 +3,12 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import theme from './styles/theme'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <StrictMode>
-    <ColorModeScript />
+    <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
     <App />
   </StrictMode>,
   document.getElementById('root')
