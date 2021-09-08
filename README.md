@@ -1,6 +1,6 @@
 ### TODOs:
 
-- [ ] Landing Page
+- [x] Landing Page
 - [ ] Login & User Verification
 - [ ] Sign Up
 
