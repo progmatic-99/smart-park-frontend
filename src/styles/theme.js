@@ -12,7 +12,7 @@ const theme = extendTheme({
         bgColor: "black",
         bgRepeat: "no-repeat",
         // bgImage: radial-gradient(circle at left, #dd00ff99, transparent 20%),radial-gradient(ellipse at 10% 20%, #d89a0099, transparent 60%)
-        bg: "radial-gradient(circle at left, #dd00ff99, transparent 20%),radial-gradient(ellipse at 20% 40%, #d89a0099, transparent 60%),radial-gradient(circle at 70% 80%, #2e2d2d, transparent 5%),radial-gradient(circle at 50% 60%, #f5d21f, transparent 3%),radial-gradient(circle at 80% 20%, white, transparent 1%),radial-gradient(circle at 90% 80%, #f5d21f, transparent 1%)",
+        bg: "radial-gradient(circle at left, #dd00ff99, transparent 20%),radial-gradient(ellipse at 20% 40%, #d89a0099, transparent 60%),radial-gradient(circle at 70% 80%, #2e2d2d, transparent 5%),radial-gradient(circle at 50% 60%, #f5d21f, transparent 3%),radial-gradient(circle at 80% 20%, white, transparent 1%),radial-gradient(circle at 90% 80%, #f5d21f, transparent 1%),radial-gradient(circle at 20% 20%, white, transparent 1%),radial-gradient(circle at 10% 80%, white, transparent 0.5%)",
       },
     }
   },

@@ -20,9 +20,9 @@ const Home = () => {
           justifySelf="center"
           p={3}
         >
-          <Heading fontSize="4em" mt={["0", "0", "6rem", "6rem"]} ml={["0", "1rem", "1rem", "3rem"]} color="brand.100">SmartPark</Heading>
-          <Text fontSize="xl" ml={["0", "1rem", "1rem", "3rem"]} mt={["1rem", "1rem", "2rem", "2rem"]} fontWeight="700" color="white">Smarter Contactless Parking</Text>
-          <Text fontSize="md" ml={["0", "1rem", "1rem", "3rem"]} color="white">Save your precious time.<br/> Book your parking slots before going out.</Text>
+          <Heading fontSize={["3em", "3em", "4em", "5em"]} mt={["0", "0", "6rem", "6rem"]} ml={["1rem", "1rem", "1rem", "3rem"]} color="white">SmartPark</Heading>
+          <Text fontSize="xl" ml={["1rem", "1rem", "1rem", "3rem"]} mt={["0.3rem", "0.7rem", "1rem", "1rem"]} fontWeight="700" color="brand.100">Smarter Contactless Parking</Text>
+          <Text fontSize="md" ml={["1rem", "1rem", "1rem", "3rem"]} color="white">Save your precious time.<br/> Book your parking slots before going out.</Text>
         </Box>
     </Flex>
   )

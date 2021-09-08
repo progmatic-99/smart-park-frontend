@@ -10,7 +10,7 @@ const MenuLinks = ({ isOpen, toggle }) => {
       flexBasis={{ base: "100%", md: "auto" }}
     >  
       <Stack
-        spacing={8}
+        spacing={10}
         align={["left", "left", "center", "center"]}
         justify={["center", "space-around", "flex-end", "flex-end"]}
         direction={["column", "column", "row", "row"]}
