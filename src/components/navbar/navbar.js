@@ -16,7 +16,7 @@ const Navbar = (props) => {
       <Spacer />
       {/* <ColorModeSwitcher /> */}
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} />
+      <MenuLinks isOpen={isOpen} toggle={toggle}/>
     </NavbarContainer>
   )
 }

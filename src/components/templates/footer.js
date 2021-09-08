@@ -8,16 +8,16 @@ const Footer = () => {
       as="footer"
       role="contentinfo"
       mx="auto"
-      bg={["transparent", "transparent", "brand.200", "brand.200"]}
+      bg="brand.500"
       w="100%"
       py="12"
+      borderTop="1px solid #1e1e2e"
       px={{ base: '4', md: '8' }}
-      sx={{ position: '-webkit-sticky', bottom: '0'}}
     >
-        <Stack direction="row" spacing="4" align="center" justify="space-around">
-          <Copyright />
-          <SocialMediaLinks />
-        </Stack>
+      <Stack direction="row" spacing="4" align="center" justify="space-around">
+        <Copyright />
+        <SocialMediaLinks />
+      </Stack>
     </Box>
   )
 }

@@ -13,8 +13,7 @@ import Home from './components/templates/home'
 import Login from './components/templates/login'
 import Signup from './components/templates/signup'
 import About from './components/templates/about'
-import '@fontsource/source-code-pro/400.css'
-import '@fontsource/source-sans-pro/600.css'
+import '@fontsource/source-sans-pro'
 import Footer from './components/templates/footer'
 
 function App() {

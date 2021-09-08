@@ -3,7 +3,7 @@ import React from 'react'
 import ButtonLink from './button-link'
 import MenuItem from './menu-item'
 
-const MenuLinks = ({ isOpen }) => {
+const MenuLinks = ({ isOpen, toggle }) => {
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block"}}
@@ -11,17 +11,17 @@ const MenuLinks = ({ isOpen }) => {
     >  
       <Stack
         spacing={8}
-        align={["flex-start", "center", "center", "center"]}
+        align={["left", "left", "center", "center"]}
         justify={["center", "space-around", "flex-end", "flex-end"]}
         direction={["column", "column", "row", "row"]}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/about">About</MenuItem>
-        <ButtonLink to="/login" variant="primary" rounded={24}>
+        <MenuItem onClick={toggle} to="/">Home</MenuItem>
+        <MenuItem onClick={toggle} to="/about">About</MenuItem>
+        <ButtonLink onClick={toggle} to="/login" variant="primary" rounded={24}>
           Log In
         </ButtonLink>
-        <ButtonLink to="/signup" variant="secondary" rounded={24}>
+        <ButtonLink onClick={toggle} to="/signup" variant="secondary" rounded={24}>
           Sign Up
         </ButtonLink>
       </Stack>

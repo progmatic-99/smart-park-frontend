@@ -7,16 +7,14 @@ const theme = extendTheme({
   useSystemColorMode: false,
   styles: {
     global: {
-      body: {
+      "body": {
+        fontFamily: "Source Sans Pro",
         bgColor: "black",
+        bgRepeat: "no-repeat",
         // bgImage: radial-gradient(circle at left, #dd00ff99, transparent 20%),radial-gradient(ellipse at 10% 20%, #d89a0099, transparent 60%)
-        bgGradient: "radial(circle to-l, #dd00ff99, transparent 20%),radial(ellipse to-r to-tr, #d89a0099, transparent 60%)",
+        bg: "radial-gradient(circle at left, #dd00ff99, transparent 20%),radial-gradient(ellipse at 20% 40%, #d89a0099, transparent 60%),radial-gradient(circle at 70% 80%, #2e2d2d, transparent 30%)",
       },
     }
-  },
-  fonts: {
-    heading: "Source Sans Pro",
-    body: "Source Code Pro",
   },
   colors: {
     brand: {
@@ -24,6 +22,7 @@ const theme = extendTheme({
       200: "#17151f",
       300: "#32334c",
       400: "#969696",
+      500: "#07070d",
     },
   },
   components: {

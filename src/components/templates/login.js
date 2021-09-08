@@ -3,8 +3,8 @@ import React from 'react'
 
 const Login = () => {
   return (
-    <Flex height="100vh" alignItems="center" justifyContent="center">
-      <Flex direction="column" background="brand.300" p={12} rounded={12}>
+    <Flex height="100vh" alignItems="flex-start" justifyContent="center">
+      <Flex direction="column" p={12} rounded={24}>
         <Heading color="white" textAlign="center" mb={6}>SmartPark</Heading> 
         <Input placeholder="your-phone-number" variant="filled" mb={6} type="number" />
         <Input placeholder="******" variant="filled" mb={6} type="password" />

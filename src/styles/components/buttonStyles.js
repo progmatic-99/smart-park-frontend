@@ -2,7 +2,6 @@ import { whiten } from "@chakra-ui/theme-tools"
 
 export const ButtonStyles = {
   baseStyle: {
-    font: "heading",
     fontWeight: "bold",
   },
   sizes: {},
@@ -16,10 +15,10 @@ export const ButtonStyles = {
       }
     }),
     secondary: (props) => ({
-      bg: "brand.400",
+      bg: "#7b2d46",
       color: "white",
       _hover: {
-        bg: whiten("brand.400", 60),
+        bg: "white",
         boxShadow: "md",
         color: "black"
       }
@@ -32,7 +31,7 @@ export const ButtonStyles = {
     iconButton: (props) => ({
       color: "brand.400",
       _hover: {
-        bg: "brand.300"
+        bg: "brand.100"
       }
     }),
   }

@@ -11,7 +11,8 @@ const NavbarContainer = ({ children, ...props }) => {
       w="100%"
       mb={8}
       p={8}
-      bg={["brand.200", "brand.200", "brand.200", "brand.200"]}
+      bg="brand.500"
+      borderBottom="1px solid #1e1e2e"
       {...props}
     >
       {children}
