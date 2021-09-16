@@ -25,7 +25,7 @@ const Footer = () => {
 const Copyright = (props) => {
   return (
     <Text fontSize="sm" {...props} color="brand.400">
-      &copy; {new Date().getFullYear()}<FaHeart />from progmatic99
+      &copy; {new Date().getFullYear()}<FaHeart />from <span style={{color: "#f5d21f"}}>progmatic99</span>
     </Text>
   )
 }

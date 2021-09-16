@@ -13,14 +13,14 @@ export const ButtonStyles = {
       _hover: {
         boxShadow: "md",
         color: "white",
-        bg: "brand.200",
+        bg: "brand.300",
       }
     }),
     secondary: (props) => ({
       bg: "#7b2d46",
       color: "white",
       _hover: {
-        bg: "brand.100",
+        bg: "brand.300",
         boxShadow: "md",
         color: "black"
       }
@@ -33,8 +33,7 @@ export const ButtonStyles = {
     iconButton: (props) => ({
       color: "brand.400",
       _hover: {
-        bg: "brand.100",
-        color: "white"
+        color: "brand.100",
       },
       _active: {
         borderColor: "none",
