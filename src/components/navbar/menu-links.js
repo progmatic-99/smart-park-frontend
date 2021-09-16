@@ -1,4 +1,5 @@
-import { Box, Stack } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Box, Link, Stack } from '@chakra-ui/react'
 import React from 'react'
 import ButtonLink from './button-link'
 import MenuItem from './menu-item'
@@ -17,7 +18,9 @@ const MenuLinks = ({ isOpen, toggle }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem onClick={toggle} to="/">Home</MenuItem>
-        <MenuItem onClick={toggle} to="/about">About</MenuItem>
+        <Link href="https://blog.progmatic99.xyz" isExternal>
+          Blog<ExternalLinkIcon mx="2px" />
+        </Link>
         <ButtonLink onClick={toggle} to="/login" variant="primary" rounded={24}>
           Log In
         </ButtonLink>

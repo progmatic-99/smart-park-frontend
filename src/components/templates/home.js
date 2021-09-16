@@ -10,17 +10,22 @@ const Home = () => {
       direction={['column', 'column', 'row', 'row']}
       wrap="wrap"
     >
+      {/* <Image
+        src={appImg}
+        w={['auto', 'auto', '50%', '55%']}
+        h={['50%', '50%', 'inherit', 'inherit']}
+      /> */}
       <Box
         w={['auto', 'auto', '50%', '55%']}
         h={['50%', '50%', 'inherit', 'inherit']}
-      ></Box>
+      >
+      </Box>
       <Box
         w={['auto', 'auto', '50%', '45%']}
         h={['50%', '50%', 'inherit', 'inherit']}
         justifySelf="center"
         p={3}
       >
-        <Image src={appImg} />
         <Heading
           fontSize={['3em', '3em', '4em', '5em']}
           mt={['0', '0', '6rem', '6rem']}
