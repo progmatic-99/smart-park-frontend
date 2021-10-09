@@ -1,20 +1,11 @@
-import { Button, Flex, Heading } from '@chakra-ui/react';
+import { Button, Flex, Heading, useToast } from '@chakra-ui/react';
 import { Form, Formik } from 'formik';
+import { useContext } from 'react';
 import { Link as ReactLink } from 'react-router-dom';
 import * as Yup from 'yup';
+import { loginUser } from '../../api/auth';
+import { UserContext } from '../../context/userContext';
 import Field from '../form/formFields';
-
-const axios = require('axios').default;
-
-const handleLogin = async (values, { resetForm, setSubmitting }) => {
-  try {
-    await axios.post('/api/login', JSON.stringify(values));
-  } catch (err) {
-    console.error(err);
-  }
-  setSubmitting(false);
-  resetForm();
-};
 
 const loginSchema = Yup.object({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -22,42 +13,79 @@ const loginSchema = Yup.object({
 });
 
 const Login = () => {
+  const { user, setUser } = useContext(UserContext);
+  const toast = useToast();
+
   return (
     <Formik
       initialValues={{
         email: '',
         password: '',
       }}
-      onSubmit={handleLogin}
+      onSubmit={async (values, { setSubmitting, resetForm }) => {
+        setSubmitting(false);
+
+        try {
+          const resp = await loginUser(values);
+          toast({
+            title: 'Congrats',
+            description: 'Login Successful.',
+            status: 'success',
+            position: 'top',
+            duration: 7000,
+            isClosable: true,
+          });
+
+          setUser(prevUser => ({ ...prevUser, resp }));
+        } catch (err) {
+          toast({
+            title: `${err}`,
+            description: 'Try again.',
+            status: 'error',
+            position: 'top',
+            duration: 7000,
+            isClosable: true,
+          });
+        }
+        resetForm();
+      }}
       validationSchema={loginSchema}
     >
-      <Form>
-        <Flex height="100vh" alignItems="flex-start" justifyContent="center">
-          <Flex direction="column" p={12} rounded={24}>
-            <Heading color="white" textAlign="center" mb={4}>
-              SmartPark
-            </Heading>
-            <Field
-              label="Email"
-              placeholder="email address"
-              name="email"
-              type="email"
-            />
-            <Field
-              label="Password"
-              placeholder="password"
-              name="password"
-              type="password"
-            />
-            <Button variant="primary" type="submit" mb={6}>
-              Log In
-            </Button>
-            <Button variant="secondary" as={ReactLink} to="/signup">
-              Sign Up
-            </Button>
+      {({ isSubmitting }) => (
+        <Form>
+          <Flex height="100vh" alignItems="flex-start" justifyContent="center">
+            <Flex direction="column" p={12} rounded={24}>
+              <Heading color="white" textAlign="center" mb={4}>
+                SmartPark
+              </Heading>
+              <Field
+                label="Email"
+                placeholder="email address"
+                name="email"
+                type="email"
+              />
+              <Field
+                label="Password"
+                placeholder="password"
+                name="password"
+                type="password"
+              />
+              <Button
+                variant="primary"
+                type="submit"
+                disabled={isSubmitting}
+                mb={6}
+                mt={3}
+              >
+                Log In
+              </Button>
+              <Button variant="secondary" as={ReactLink} to="/signup">
+                Sign Up
+              </Button>
+            </Flex>
           </Flex>
-        </Flex>
-      </Form>
+        </Form>
+      )}
     </Formik>
   );
 };

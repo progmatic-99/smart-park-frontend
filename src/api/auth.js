@@ -20,13 +20,11 @@ const signupUser = async ({ name, email, password }) => {
 
     return Promise.resolve(resp.data);
   } catch (err) {
-    console.error(err);
-
     return Promise.reject(err);
   }
 };
 
-const loginUser = async (email, password) => {
+const loginUser = async ({ email, password }) => {
   const loginBody = { email: email, password: password };
 
   try {
@@ -35,8 +33,6 @@ const loginUser = async (email, password) => {
 
     return Promise.resolve(resp.data);
   } catch (err) {
-    console.error(err);
-
     return Promise.reject(err);
   }
 };
@@ -50,16 +46,4 @@ const authRequest = axios.create({
   },
 });
 
-const getUser = async () => {
-  try {
-    const resp = await authRequest.post('/api/user');
-
-    return Promise.resolve(resp.data);
-  } catch (err) {
-    console.error(err);
-
-    return Promise.reject(err);
-  }
-};
-
-export { tokenRequest, signupUser, loginUser, getUser };
+export { tokenRequest, signupUser, loginUser };

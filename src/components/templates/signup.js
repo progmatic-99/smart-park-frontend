@@ -1,17 +1,9 @@
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-  Button,
-  Flex,
-  Heading,
-  CloseButton,
-} from '@chakra-ui/react';
+import { Button, Flex, Heading, useToast } from '@chakra-ui/react';
 import { Form, Formik } from 'formik';
 import Field from '../form/formFields';
 import * as Yup from 'yup';
 import { signupUser } from '../../api/auth';
+import { Link as ReactLink } from 'react-router-dom';
 
 const signupSchema = Yup.object({
   name: Yup.string()
@@ -23,6 +15,8 @@ const signupSchema = Yup.object({
 });
 
 const Signup = () => {
+  const toast = useToast();
+
   return (
     <Formik
       initialValues={{
@@ -31,9 +25,28 @@ const Signup = () => {
         password: '',
       }}
       onSubmit={async (values, { resetForm, setSubmitting }) => {
-        const resp = await signupUser(values);
-        console.log(resp);
         setSubmitting(false);
+
+        try {
+          const resp = await signupUser(values);
+          toast({
+            title: 'Account created.',
+            description: 'Login with your email.',
+            status: 'success',
+            position: 'top',
+            duration: 7000,
+            isClosable: true,
+          });
+        } catch (err) {
+          toast({
+            title: 'Email already exists.',
+            description: 'Try with a different email.',
+            status: 'error',
+            position: 'top',
+            duration: 7000,
+            isClosable: true,
+          });
+        }
         resetForm();
       }}
       validationSchema={signupSchema}
@@ -59,8 +72,16 @@ const Signup = () => {
                 mb={8}
                 type="password"
               />
-              <Button variant="secondary" type="submit" disabled={isSubmitting}>
+              <Button
+                variant="secondary"
+                type="submit"
+                mb={4}
+                disabled={isSubmitting}
+              >
                 Sign Up
+              </Button>
+              <Button variant="primary" as={ReactLink} to="/login">
+                Log In
               </Button>
             </Flex>
           </Flex>

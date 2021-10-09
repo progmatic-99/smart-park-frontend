@@ -23,10 +23,10 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
 
           <UserContext.Provider value={value}>
+            <Route path="/login" component={Login} />
             <Route path="/user" component={UserHome} />
           </UserContext.Provider>
         </Switch>
