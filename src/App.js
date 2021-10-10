@@ -10,7 +10,7 @@ import About from './components/templates/about';
 import '@fontsource/source-sans-pro';
 import Footer from './components/templates/footer';
 import { UserContext } from './context/userContext';
-import UserHome from './components/user/UserHome';
+import Profile from './components/user/profile';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -18,20 +18,19 @@ function App() {
   const value = useMemo(() => ({ user, setUser }), [user, setUser]);
   return (
     <ChakraProvider theme={theme}>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/signup" component={Signup} />
-
-          <UserContext.Provider value={value}>
+      <UserContext.Provider value={value}>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path="/user" component={UserHome} />
-          </UserContext.Provider>
-        </Switch>
-        <Footer />
-      </Router>
+            <Route path="/user" component={Profile} />
+          </Switch>
+          <Footer />
+        </Router>
+      </UserContext.Provider>
     </ChakraProvider>
   );
 }

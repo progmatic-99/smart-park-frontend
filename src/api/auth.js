@@ -29,21 +29,24 @@ const loginUser = async ({ email, password }) => {
 
   try {
     const resp = await tokenRequest.post('/api/login', loginBody);
-    window.localStorage.setItem(ACCESS_TOKEN, resp.data['jwt']);
+    localStorage.setItem(ACCESS_TOKEN, resp.data['jwt']);
 
-    return Promise.resolve(resp.data);
+    const { jwt, ...user } = resp.data;
+    localStorage.setItem(user, user);
+
+    return Promise.resolve(user);
   } catch (err) {
     return Promise.reject(err);
   }
 };
 
-const authRequest = axios.create({
-  baseURL: BASE_URL,
-  timeout: 5000,
-  headers: {
-    Authorization: `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`,
-    'Content-Type': 'application/json',
-  },
-});
+// const authRequest = axios.create({
+//   baseURL: BASE_URL,
+//   timeout: 5000,
+//   headers: {
+//     Authorization: `Bearer ${window.localStorage.getItem(ACCESS_TOKEN)}`,
+//     'Content-Type': 'application/json',
+//   },
+// });
 
 export { tokenRequest, signupUser, loginUser };

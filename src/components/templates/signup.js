@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik';
 import Field from '../form/formFields';
 import * as Yup from 'yup';
 import { signupUser } from '../../api/auth';
-import { Link as ReactLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const signupSchema = Yup.object({
   name: Yup.string()
@@ -16,6 +16,7 @@ const signupSchema = Yup.object({
 
 const Signup = () => {
   const toast = useToast();
+  let history = useHistory();
 
   return (
     <Formik
@@ -28,21 +29,22 @@ const Signup = () => {
         setSubmitting(false);
 
         try {
-          const resp = await signupUser(values);
+          await signupUser(values);
           toast({
             title: 'Account created.',
             description: 'Login with your email.',
             status: 'success',
-            position: 'top',
+            position: 'bottom',
             duration: 7000,
             isClosable: true,
           });
+          history.push('/login');
         } catch (err) {
           toast({
             title: 'Email already exists.',
             description: 'Try with a different email.',
             status: 'error',
-            position: 'top',
+            position: 'bottom',
             duration: 7000,
             isClosable: true,
           });
@@ -79,9 +81,6 @@ const Signup = () => {
                 disabled={isSubmitting}
               >
                 Sign Up
-              </Button>
-              <Button variant="primary" as={ReactLink} to="/login">
-                Log In
               </Button>
             </Flex>
           </Flex>

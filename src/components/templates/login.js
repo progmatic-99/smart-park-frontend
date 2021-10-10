@@ -1,7 +1,7 @@
 import { Button, Flex, Heading, useToast } from '@chakra-ui/react';
 import { Form, Formik } from 'formik';
 import { useContext } from 'react';
-import { Link as ReactLink } from 'react-router-dom';
+import { Link as ReactLink, useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import { loginUser } from '../../api/auth';
 import { UserContext } from '../../context/userContext';
@@ -13,8 +13,9 @@ const loginSchema = Yup.object({
 });
 
 const Login = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const toast = useToast();
+  let history = useHistory();
 
   return (
     <Formik
@@ -31,18 +32,19 @@ const Login = () => {
             title: 'Congrats',
             description: 'Login Successful.',
             status: 'success',
-            position: 'top',
+            position: 'bottom',
             duration: 7000,
             isClosable: true,
           });
 
-          setUser(prevUser => ({ ...prevUser, resp }));
+          setUser(resp);
+          history.push('/user');
         } catch (err) {
           toast({
             title: `${err}`,
             description: 'Try again.',
             status: 'error',
-            position: 'top',
+            position: 'bottom',
             duration: 7000,
             isClosable: true,
           });
