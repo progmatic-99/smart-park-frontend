@@ -1,33 +1,23 @@
-import React, { useMemo, useState } from 'react';
+import React, { useReducer } from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import theme from './styles/theme';
 import Navbar from './components/navbar/navbar';
-import Home from './components/templates/home';
-import Login from './components/templates/login';
-import Signup from './components/templates/signup';
-import About from './components/templates/about';
 import '@fontsource/source-sans-pro';
 import Footer from './components/templates/footer';
 import { UserContext } from './context/userContext';
-import Profile from './components/user/profile';
+import { initialState, reducer } from './reducers/userReducer';
+import Routing from './Routing';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
   return (
     <ChakraProvider theme={theme}>
-      <UserContext.Provider value={value}>
+      <UserContext.Provider value={{ state, dispatch }}>
         <Router>
           <Navbar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
-            <Route path="/user" component={Profile} />
-          </Switch>
+          <Routing />
           <Footer />
         </Router>
       </UserContext.Provider>

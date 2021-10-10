@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import { loginUser } from '../../api/auth';
 import { UserContext } from '../../context/userContext';
 import Field from '../form/formFields';
+import PasswordInput from '../form/password';
 
 const loginSchema = Yup.object({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -13,7 +14,7 @@ const loginSchema = Yup.object({
 });
 
 const Login = () => {
-  const { setUser } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   const toast = useToast();
   let history = useHistory();
 
@@ -37,7 +38,7 @@ const Login = () => {
             isClosable: true,
           });
 
-          setUser(resp);
+          dispatch({ type: 'LOGIN_SUCCESS', payload: resp });
           history.push('/user');
         } catch (err) {
           toast({
@@ -66,12 +67,7 @@ const Login = () => {
                 name="email"
                 type="email"
               />
-              <Field
-                label="Password"
-                placeholder="password"
-                name="password"
-                type="password"
-              />
+              <PasswordInput />
               <Button
                 variant="primary"
                 type="submit"

@@ -4,6 +4,7 @@ import Field from '../form/formFields';
 import * as Yup from 'yup';
 import { signupUser } from '../../api/auth';
 import { useHistory } from 'react-router-dom';
+import PasswordInput from '../form/password';
 
 const signupSchema = Yup.object({
   name: Yup.string()
@@ -67,13 +68,7 @@ const Signup = () => {
                 name="email"
                 type="email"
               />
-              <Field
-                label="Password"
-                placeholder="password"
-                name="password"
-                mb={8}
-                type="password"
-              />
+              <PasswordInput />
               <Button
                 variant="secondary"
                 type="submit"

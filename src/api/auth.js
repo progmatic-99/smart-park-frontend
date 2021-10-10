@@ -2,6 +2,7 @@ const axios = require('axios').default;
 
 const BASE_URL = 'http://127.0.0.1:8000';
 const ACCESS_TOKEN = 'access_token';
+const USER = 'user';
 
 let tokenRequest = axios.create({
   baseURL: BASE_URL,
@@ -32,7 +33,7 @@ const loginUser = async ({ email, password }) => {
     localStorage.setItem(ACCESS_TOKEN, resp.data['jwt']);
 
     const { jwt, ...user } = resp.data;
-    localStorage.setItem(user, user);
+    localStorage.setItem(USER, JSON.stringify(user));
 
     return Promise.resolve(user);
   } catch (err) {

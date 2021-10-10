@@ -4,13 +4,12 @@ import { UserContext } from '../../context/userContext';
 import UserHome from './userHome';
 
 const Profile = () => {
-  const { user } = useContext(UserContext);
-  console.dir(user);
+  const { state } = useContext(UserContext);
 
   return (
     <Route
       render={({ location }) =>
-        user ? (
+        state.user ? (
           <UserHome />
         ) : (
           <Redirect
