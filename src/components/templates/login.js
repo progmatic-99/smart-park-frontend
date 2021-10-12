@@ -1,22 +1,16 @@
 import { Button, Flex, Heading, useToast } from '@chakra-ui/react';
 import { Form, Formik } from 'formik';
-import { useContext } from 'react';
 import { Link as ReactLink, useHistory } from 'react-router-dom';
-import * as Yup from 'yup';
 import { loginUser } from '../../api/auth';
-import { UserContext } from '../../context/userContext';
+import { useAuth } from '../../context/userContext';
+import { loginSchema } from '../../schemas/loginSchema';
 import Field from '../form/formFields';
 import PasswordInput from '../form/password';
 
-const loginSchema = Yup.object({
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string().required('Required'),
-});
-
 const Login = () => {
-  const { dispatch } = useContext(UserContext);
+  const { dispatch } = useAuth();
+  const history = useHistory();
   const toast = useToast();
-  let history = useHistory();
 
   return (
     <Formik

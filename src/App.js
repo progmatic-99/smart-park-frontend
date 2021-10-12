@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, useHistory } from 'react-router-dom';
 import theme from './styles/theme';
 import Navbar from './components/navbar/navbar';
 import '@fontsource/source-sans-pro';

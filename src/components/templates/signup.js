@@ -1,23 +1,14 @@
 import { Button, Flex, Heading, useToast } from '@chakra-ui/react';
 import { Form, Formik } from 'formik';
 import Field from '../form/formFields';
-import * as Yup from 'yup';
 import { signupUser } from '../../api/auth';
-import { useHistory } from 'react-router-dom';
 import PasswordInput from '../form/password';
-
-const signupSchema = Yup.object({
-  name: Yup.string()
-    .min(2, 'Too short')
-    .max(40, 'Too long')
-    .required('Required'),
-  password: Yup.string().min(8, 'Too short').required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
-});
+import { signupSchema } from '../../schemas/signupSchema';
+import { useHistory } from 'react-router-dom';
 
 const Signup = () => {
   const toast = useToast();
-  let history = useHistory();
+  const history = useHistory();
 
   return (
     <Formik

@@ -1,14 +1,14 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import Home from './components/templates/home';
 import Login from './components/templates/login';
 import Signup from './components/templates/signup';
 import About from './components/templates/about';
 import Profile from './components/user/profile';
-import { UserContext } from './context/userContext';
+import { useAuth } from './context/userContext';
 
 const Routing = () => {
-  const { dispatch } = useContext(UserContext);
+  const { dispatch } = useAuth();
   const history = useHistory();
 
   useEffect(() => {
