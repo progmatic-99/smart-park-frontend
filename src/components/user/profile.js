@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { UserContext } from '../../context/userContext';
+import { useAuth } from '../../context/userContext';
 import UserHome from './userHome';
 
 const Profile = () => {
-  const { state } = useContext(UserContext);
+  const { state } = useAuth();
 
   return (
     <Route

@@ -1,7 +1,10 @@
 import React from 'react';
+import { useAuth } from '../../context/userContext';
 
 const UserHome = () => {
-  return <div>You are logged in!!</div>;
+  const { state } = useAuth();
+
+  return <div>Logged In.</div>;
 };
 
 export default UserHome;

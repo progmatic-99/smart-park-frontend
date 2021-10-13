@@ -27,8 +27,10 @@ export const ButtonStyles = {
     }),
     hamburger: props => ({
       color: 'white',
-      border: '1px solid',
-      borderColor: 'white',
+      backgroundColor: 'brand.500',
+      _hover: {
+        backgroundColor: '#1f1f38',
+      },
     }),
     iconButton: props => ({
       color: 'brand.400',

@@ -1,8 +1,8 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Link, Stack } from '@chakra-ui/react';
 import React from 'react';
-import ButtonLink from './button-link';
-import MenuItem from './menu-item';
+import ButtonLink from './buttonLink';
+import MenuItem from './menuItem';
 
 const MenuLinks = ({ isOpen, toggle }) => {
   return (
